@@ -48,7 +48,9 @@
                     @if (is_null($user->avatar))
                         <em><a class="underline text-blue-600" href="{{route('avatar', $user->id)}}">Subir avatar</a></em>
                     @else 
-                        aaa
+                    <a href="{{route('avatar', $user->id)}}">
+                        <img src="{{ asset('storage/' . $user->avatar) }}" title="Avatar de {{$user->name}}" class="w-20">
+                    </a>
                     @endif
                 </td>
                 <td class="px-4 py-2">{{$user->name}}</td>

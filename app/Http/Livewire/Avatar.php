@@ -28,7 +28,7 @@ class Avatar extends Component
     {
         $this->validate([
                 'file' => 'required|image|max:2048'
-            ]);
+        ]);
 
         $this->user->update([
             'avatar' => $this->file->store('avatar','public')

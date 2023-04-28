@@ -4,6 +4,6 @@
     
     @livewire('users');
 
-    @livewireScripts
+    
 
 @endsection

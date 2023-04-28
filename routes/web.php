@@ -16,7 +16,7 @@ use App\Http\Livewire\Avatar;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 
 Route::get('avatar/{user}', Avatar::class)->name('avatar');
