@@ -13,7 +13,8 @@ class Users extends Component
     public function render()
     {
         $this->users = User::latest()->orderBy('id','DESC')->get();
-        return view('livewire.users');
+       // return view('livewire.users');
+        return view('livewire.users')->extends('layouts.app')->section('content');
     }
 
     public function store()

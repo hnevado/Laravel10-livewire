@@ -34,6 +34,7 @@
         <thead>
             <tr class="bg-gray-200 text-gray-600 uppercase text-sm">
                 <th class="py-3 px-6 text-left">#</th>
+                <th class="py-3 px-6 text-left">Avatar</th>
                 <th class="py-3 px-6 text-left">Nombre</th>
                 <th class="py-3 px-6 text-left">Email</th>
                 <th class="py-3-px-6 text-left"></th>
@@ -43,12 +44,19 @@
             @foreach ($users as $user)
              <tr class="border-b border-gray-200">
                 <td class="px-4 py-2">{{$user->id }}</td>
+                <td class="px-4 py-2">
+                    @if (is_null($user->avatar))
+                        <em><a class="underline text-blue-600" href="{{route('avatar', $user->id)}}">Subir avatar</a></em>
+                    @else 
+                        aaa
+                    @endif
+                </td>
                 <td class="px-4 py-2">{{$user->name}}</td>
                 <td class="px-4 py-2">{{$user->email}}</td>
-                <td> 
+                <td class="px-4 py-2"> 
                   <form> 
                     @method('DELETE')
-                    <button wire:click.prevent='destroy({{$user->id}})' class="bg-gray-400 text-white font-bold w-full p-2 shadow mb-2 mt-2">X</button>
+                    <button wire:click.prevent='destroy({{$user->id}})' class="bg-gray-400 text-white font-bold w-full p-2 shadow">X</button>
                   </form>
                 </td>
              </tr>
